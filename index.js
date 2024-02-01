@@ -40,7 +40,7 @@ module.exports.putJSON = async(bucket, path, fileName, data, expireTime)=>{
     if(path) key += `${path}/`
     key += `${fileName}.json`
     let result = client.putObject(bucket, key, JSON.stringify(data), metadata)
-    return result?.etag
+    return result
   }catch(e){
     throw(e)
   }
