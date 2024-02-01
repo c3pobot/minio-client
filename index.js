@@ -2,7 +2,7 @@
 const Minio = require('minio')
 const client = new Minio.Client({
   endPoint: process.env.MINIO_SCV_URL,
-  port: process.env.MINIO_PORT,
+  port: +process.env.MINIO_PORT || 9000,
   useSSL: false,
   accessKey: process.env.MINIO_ACCESSKEY,
   secretKey: process.env.MINIO_SECRETKEY
